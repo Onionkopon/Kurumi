@@ -74,8 +74,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SungJinWoo_IMG = "https://telegra.ph/file/244cdf7757e2c343784cd.jpg"
-
+SungJinWoo_IMG = "https://telegra.ph/file/63c8d82bffc0e5dabf14e.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Click here to donate in [Paypal](https://www.paypal.me/piratehunter1202)"""
 
@@ -195,7 +194,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Sung Jin-Woo to your group",
+                            text="☑️ Add Kurumi Chan to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -205,7 +204,7 @@ def start(update: Update, context: CallbackContext):
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🔗 Source 🔗",
-                             url="https://github.com/Pirate-Hunter/Sung-Jinwoo")
+                             url="https://github.com/Hirojazz/Sung-Jinwoo")
                      ]]))
                      
                     
