@@ -76,7 +76,7 @@ And the following:
 
 SungJinWoo_IMG = "https://telegra.ph/file/63c8d82bffc0e5dabf14e.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Click here to donate in [Paypal](https://www.paypal.me/piratehunter1202)"""
+Click here to donate in [Paypal](https://www.paypal.me/zameeljaz)"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -205,7 +205,12 @@ def start(update: Update, context: CallbackContext):
                          InlineKeyboardButton(
                              text="🔗 Source 🔗",
                              url="https://github.com/Hirojazz/Sung-Jinwoo")
-                     ]]))
+                    ], 
+                     [
+                         InlineKeyboardButton(
+                             text="🔔 Updates Of Light 🔔",
+                             url="https://t.me/hiroiscool")
+                    ]]))
                      
                     
                   
