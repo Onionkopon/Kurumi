@@ -58,7 +58,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
         try:
             options = [
                 '{} the pro is back!', '{} why came back!', '{} is here\nTo make trouble!', '{} is reincarnated!',
-                '{} don't trash the chat!', '{} go back!', '{} be gentle to all!',
+                '{} do not trash the chat!', '{} go back!', '{} be gentle to all!',
                 'Get doomed! {}', 'Go sleep {}', 'Yamete...Yamete-kudasai {}-sama', '{} was busy with his gf', '{} bas vapas jaa'
             ]
             chosen_option = random.choice(options)
