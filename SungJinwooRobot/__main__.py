@@ -208,9 +208,6 @@ def start(update: Update, context: CallbackContext):
                     ], 
                      [
                          InlineKeyboardButton(
-                             text="❤My love❤",
-                             url="https://t.me/A_lonelyPerson"),
-                         InlineKeyboardButton(
                              text="🔔 Updates Of KURUMI 🔔",
                              url="https://t.me/hiroiscool")
                     ]]))
