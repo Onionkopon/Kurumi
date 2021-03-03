@@ -204,7 +204,7 @@ def start(update: Update, context: CallbackContext):
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🔗 Source 🔗",
-                             url="https://github.com/Hirojazz/Sung-Jinwoo")
+                             url="https://github.com/Hirojazz/Kurumi")
                     ], 
                      [
                          InlineKeyboardButton(
