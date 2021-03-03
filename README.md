@@ -1,13 +1,13 @@
-![Sung Jin-Woo](https://telegra.ph/file/cc951a72b7416a2dedc02.jpg)
-# Sung Jin-Woo 
+![KURUMI Chan](https://telegra.ph/file/e86cbb3e4a413f36c5aae.jpg)
+# KURUMI Chan
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)!]
 
 
-A modular Telegram Group Management bot made using [Saitama](https://t.me/SaitamaRobot) as base repo.
+A modular Telegram Group Management bot made using [KURUMI Chan](https://t.me/Kurumi_0bot) as base repo.
 
-Can be found on telegram as [Sung Jin-Woo](https://t.me/SungJinwooRobot).
+Can be found on telegram as [KURUMI Chan](https://t.me/Kurumi_0bot).
 
-The Support group can be reached out to at [Hunters Associations](https://t.me/HuntersAssociations), where you can ask for help about [Sung Jin-Woo](https://t.me/SungJinwooRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [KURUMI Support](https://t.me/kurumisupport), where you can ask for help about [KURUMI Chan](https://t.me/Kurumi_0bot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 ## How to setup/deploy.
 
@@ -24,7 +24,7 @@ REMEMBER: Turn on worker dyno (Don't worry It's free :D) & Webhook
 Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.com/apps/(app-name)/settings and remove webhook and port.
 ```
 
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Pirate-Hunter/Sung-Jinwoo.git)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hirojazz/Kurumi.git)
 
 </details>  
 <details>
@@ -39,7 +39,7 @@ This is because markdown parsing is done by iterating through a dict, which is o
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The preferred version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `SungJinwooRobot` folder, alongside the `__main__.py` file. 
+This file should be placed in your `SungJinWoo` folder, alongside the `__main__.py` file. 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of
 your other settings.
 
@@ -164,10 +164,10 @@ Note: the restart bat requires that User account control be disabled.
 ## How to setup on Heroku 
 For starters click on this button 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Pirate-Hunter/Sung-Jinwoo.git) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hirojazz/Kurumi.git) 
 
 
 ## Credits
-The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars) also futher development done by SaitamaRobot creator.
+The bot is based on the original work done by [Hirojazz](https://github.com/Hiro) also futher development done by KURUMI Chan creator.
 This repo was just revamped to suit an Anime-centric community. All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
 
