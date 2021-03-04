@@ -1,14 +1,14 @@
 {
-      "name": "SungJinwooRobot",
+      "name": "Kurumi",
       "description": "An Anime themed Telegram group management bot.",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Saitama"
+         "Kurumi"
       ],   
-   "repository": "https://github.com/Pirate-Hunter/Sung-Jinwoo",
+   "repository": "https://github.com/Hirojazz/Kurumi",
    "addons": [
       {
          "options": {
