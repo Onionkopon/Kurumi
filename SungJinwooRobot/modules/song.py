@@ -13,8 +13,8 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo, DocumentAttributeAudio
 from telethon import events
 
-from SaitamaRobot.events import register
-from SaitamaRobot.utils import progress
+from Kurumi.events import register
+from Kurumi.utils import progress
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
 
