@@ -1,3 +1,4 @@
+# Created by @p_rinc_e
 from pathlib import Path
 import asyncio, time, io, math, os, logging, asyncio, shutil, re, subprocess, json
 from re import findall
@@ -13,15 +14,25 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo, DocumentAttributeAudio
 from telethon import events
 
-from Kurumi.events import register
-from Kurumi.utils import progress
+from SaitamaRobot.event import register
+from SaitamaRobot.utils import progress
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+from validators.url import url
+from html import unescape
+from urllib.error import HTTPError
+import bs4
+from bs4 import BeautifulSoup
 from youtube_dl import YoutubeDL
+
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
 
                               ExtractorError, GeoRestrictedError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
+
 try:
+
    from youtubesearchpython import SearchVideos 
 
 except:
@@ -35,12 +46,12 @@ async def download_video(v_url):
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
 
     if not sender.id == me.id:
-        rkp = await lazy.reply("`processing...`")
+        rkp = await lazy.reply("processing...")
     else:
-    	rkp = await lazy.edit("`processing...`")   
+    	rkp = await lazy.edit("processing...")   
     url = v_url.pattern_match.group(1)
     if not url:
-         return await rkp.edit("`Error \nusage song <song name>`")
+         return await rkp.edit("Error \nusage song <song name>")
     search = SearchVideos(url, offset = 1, mode = "json", max_results = 1)
     test = search.result()
     p = json.loads(test)
@@ -48,9 +59,9 @@ async def download_video(v_url):
     try:
        url = q[0]['link']
     except:
-    	return await rkp.edit("`failed to find`")
+    	return await rkp.edit("failed to find")
     type = "audio"
-    await rkp.edit("`Preparing to download...`")
+    await rkp.edit("Preparing to download...")
     if type == "audio":
         opts = {
             'format':
@@ -82,41 +93,41 @@ async def download_video(v_url):
         video = False
         song = True    
     try:
-        await rkp.edit("`Fetching data, please wait..`")
+        await rkp.edit("Fetching data, please wait..")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
-        await rkp.edit(f"`{str(DE)}`")
+        await rkp.edit(f"{str(DE)}")
         return
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
+        await rkp.edit("The download content was too short.")
         return
     except GeoRestrictedError:
         await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "Video is not available from your geographic location due to geographic restrictions imposed by a website."
         )
         return
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+        await rkp.edit("Max-downloads limit has been reached.")
         return
     except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
+        await rkp.edit("There was an error during post processing.")
         return
     except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
+        await rkp.edit("Media is not available in the requested format.")
         return
     except XAttrMetadataError as XAME:
-        await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        await rkp.edit(f"{XAME.code}: {XAME.msg}\n{XAME.reason}")
         return
     except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
+        await rkp.edit("There was an error during info extraction.")
         return
     except Exception as e:
         await rkp.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await rkp.edit(f"`Preparing to upload song:`\
+        await rkp.edit(f"Preparing to upload song:\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -134,7 +145,7 @@ async def download_video(v_url):
                          f"{rip_data['title']}.mp3")))
         os.remove(f"{rip_data['id']}.mp3")
     elif video:
-        await rkp.edit(f"`Preparing to upload song :`\
+        await rkp.edit(f"Preparing to upload song :\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -153,12 +164,12 @@ async def download_video(v_url):
 async def download_video(v_url):  
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
     if not sender.id == me.id:
-        rkp = await lazy.reply("`processing...`")
+        rkp = await lazy.reply("processing...")
     else:
-    	rkp = await lazy.edit("`processing...`")   
+    	rkp = await lazy.edit("processing...")   
     url = v_url.pattern_match.group(1)
     if not url:
-         return await rkp.edit("`Error \nusage song <song name>`")
+         return await rkp.edit("Error \nusage song <song name>")
     search = SearchVideos(url, offset = 1, mode = "json", max_results = 1)
     test = search.result()
     p = json.loads(test)
@@ -166,9 +177,9 @@ async def download_video(v_url):
     try:
        url = q[0]['link']
     except:
-    	return await rkp.edit("`failed to find`")
+    	return await rkp.edit("failed to find")
     type = "audio"
-    await rkp.edit("`Preparing to download...plz wait..`")
+    await rkp.edit("Preparing to download...")
     if type == "audio":
         opts = {
             'format':
@@ -197,41 +208,41 @@ async def download_video(v_url):
         song = False
         video = True
     try:
-        await rkp.edit("`Fetching data, please wait..`")
+        await rkp.edit("Fetching data, please wait..")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
-        await rkp.edit(f"`{str(DE)}`")
+        await rkp.edit(f"{str(DE)}")
         return
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
+        await rkp.edit("The download content was too short.")
         return
     except GeoRestrictedError:
         await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "Video is not available from your geographic location due to geographic restrictions imposed by a website."
         )
         return
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+        await rkp.edit("Max-downloads limit has been reached.")
         return
     except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
+        await rkp.edit("There was an error during post processing.")
         return
     except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
+        await rkp.edit("Media is not available in the requested format.")
         return
     except XAttrMetadataError as XAME:
-        await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        await rkp.edit(f"{XAME.code}: {XAME.msg}\n{XAME.reason}")
         return
     except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
+        await rkp.edit("There was an error during info extraction.")
         return
     except Exception as e:
         await rkp.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await rkp.edit(f"`Preparing to upload song `\
+        await rkp.edit(f"Preparing to upload song \
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -250,7 +261,7 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await rkp.edit(f"`Preparing to upload video song :`\
+        await rkp.edit(f"Preparing to upload video song :\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -265,14 +276,11 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp4")
         await rkp.delete()
 
-__help__ = """
- *You can either enter just the song name or both the artist and song
-  name. *
 
- - `/song` <songname artist(optional)>: uploads the song in it's best quality available
- - `/video` <songname artist(optional)>: uploads the video song in it's best quality available
- - `/lyrics` <song>: returns the lyrics of that song.
+help = """
+ ➩ /song <songname artist(optional)>: uploads the song in it's best quality available
 
+ ➩ /video <songname artist(optional)>: uploads the video song in it's best quality available
 """
 
-__mod_name__ = "Music"
+mod_name = "Songs"
