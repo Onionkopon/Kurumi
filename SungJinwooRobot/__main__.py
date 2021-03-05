@@ -72,7 +72,7 @@ I Use My Powers To Help Admins To Manage Their Groups!
 And the following:
 """.format(
     dispatcher.bot.first_name, ""
-    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
 
 SungJinWoo_IMG = "https://telegra.ph/file/63c8d82bffc0e5dabf14e.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -203,13 +203,13 @@ def start(update: Update, context: CallbackContext):
                              text="🚨 Support 🚨",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🔗 Source 🔗",
-                             url="https://github.com/Hirojazz/Kurumi")
+                             text="🔔 Updates Of KURUMI 🔔",
+                             url="https://t.me/hiroiscool")
                     ], 
                      [
                          InlineKeyboardButton(
-                             text="🔔 Updates Of KURUMI 🔔",
-                             url="https://t.me/hiroiscool")
+                             text="📳Anime Chat Group📳",
+                             url="https://t.me/WeebXWorld")
                     ]]))
                      
                     
