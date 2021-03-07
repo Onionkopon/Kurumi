@@ -5,7 +5,7 @@ from tswift import Song
 from telegram import Bot, Update, Message, Chat
 from telegram.ext import CallbackContext, run_async
 
-from SungJinwooRobot import dispatcher
+from Kurumi import dispatcher
 from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
 from SungJinwooRobot.modules.helper_funcs.alternate import typing_action
 
