@@ -14,8 +14,8 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo, DocumentAttributeAudio
 from telethon import events
 
-from LightYagami.events import register
-from LightYagami.utils import progress
+from SungJinwooRobot.events import register
+from SungJinwooRobot.utils import progress
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
