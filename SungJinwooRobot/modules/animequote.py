@@ -1,9 +1,9 @@
 import html
 import random
-import SungJinwooRobot.modules.animequote_string as animequote_string
+import SungJinwooRobot.quotes as animequote_string
 from SungJinwooRobot import dispatcher
 from telegram import ParseMode, Update, Bot
-from ItachiRobot.modules.disable import DisableAbleCommandHandler
+from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
 from telegram.ext import CallbackContext, run_async
 
 @run_async
