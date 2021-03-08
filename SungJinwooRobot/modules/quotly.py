@@ -390,9 +390,9 @@ async def _(event):
     await event.client.send_file(event.chat_id, "sticker.webp", reply_to=event.reply_to_msg_id)
     os.remove('sticker.webp')
 
+__mod_name__ = "quotly"
+
 __help__ = """
  - `/q` : create a quote from a message
 
 """
-
-__mod_name_ = "quotly"
