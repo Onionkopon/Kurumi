@@ -18,6 +18,6 @@ dispatcher.add_handler(AQ_HANDLER)
 __mod_name__ = "anime quote"
 
 __help__ = """
- - `aq` : get random anime quotes
+ - `/aq` : get random anime quotes
 
 """
