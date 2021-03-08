@@ -391,8 +391,7 @@ async def _(event):
     os.remove('sticker.webp')
 
 __help__ = """
-
- - `/q` get your text as sticker
+ - `/q` : create a quote from a message
 
 """
 
