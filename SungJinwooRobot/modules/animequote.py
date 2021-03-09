@@ -14,10 +14,3 @@ def aq(update: Update, context: CallbackContext):
 AQ_HANDLER = DisableAbleCommandHandler("aq", aq)
 
 dispatcher.add_handler(AQ_HANDLER)
-
-__mod_name__ = "anime quote"
-
-__help__ = """
- - `/aq` : get random anime quotes
-
-"""
