@@ -568,6 +568,9 @@ Get information about anime, manga or characters from [AniList](anilist.co).
  • `/kayo <anime>`*:* search an anime on animekayo.com
  • `/airing <anime>`*:* returns anime airing info.
 
+ ➩ *Anime Fun:*
+ • `/aq` *:* get random anime quotes
+
  """
 
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime)
