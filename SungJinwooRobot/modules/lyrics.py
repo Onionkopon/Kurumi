@@ -40,7 +40,6 @@ def lyrics(update: Update, context: CallbackContext):
 
             
 __help__ = """
-This Module Credits Goes To @chizurumanagementbot
  Want to get the lyrics of your favorite songs straight from the app? This module is perfect for that!
 *Available commands:*
  - /lyrics <song>: returns the lyrics of that song.
