@@ -16,35 +16,30 @@ GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr
 
 
 @run_async
-def sanitize(update: Update, context: CallbackContext):
+def hug(update: Update, context: CallbackContext):
+    bot = context.bot
+    args = context.args
     message = update.effective_message
-    name = (
-        message.reply_to_message.from_user.first_name
-        if message.reply_to_message
-        else message.from_user.first_name
-    )
+
+    reply_to = message.reply_to_message if message.reply_to_message else message
+
+    curr_user = html.escape(message.from_user.first_name)
+    user_id = extract_user(message, args)
+
+    if user_id:
+        patted_user = bot.get_chat(user_id)
+        user1 = curr_user
+        user2 = html.escape(hugged_user.first_name)
+
+    else:
+        user1 = bot.first_name
+        user2 = curr_user
     reply_animation = (
         message.reply_to_message.reply_animation
         if message.reply_to_message
         else message.reply_animation
     )
-    reply_animation(GIF_ID, caption=f"*Sanitizes {name}*")
-
-
-@run_async
-def sanitize(update: Update, context: CallbackContext):
-    message = update.effective_message
-    name = (
-        message.reply_to_message.from_user.first_name
-        if message.reply_to_message
-        else message.from_user.first_name
-    )
-    reply_animation = (
-        message.reply_to_message.reply_animation
-        if message.reply_to_message
-        else message.reply_animation
-    )
-    reply_animation(random.choice(meme_strings.GIFS), caption=f"*Sanitizes {name}*")
+    reply_animation(random.choice(meme_strings.HUG_GIFS), caption=f"*{user1} hugs {user2}*")
    
 #plugin by t.me/RCage
 @run_async
