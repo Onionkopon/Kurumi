@@ -16,7 +16,7 @@ GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr
 
 
 @run_async
-def sanitize(update: Update, context: CallbackContext):
+def hug(update: Update, context: CallbackContext):
     message = update.effective_message
     name = (
         message.reply_to_message.from_user.first_name
@@ -28,11 +28,11 @@ def sanitize(update: Update, context: CallbackContext):
         if message.reply_to_message
         else message.reply_animation
     )
-    reply_animation(GIF_ID, caption=f"*Sanitizes {name}*")
+    reply_animation(GIF_ID, caption=f"*hugs {name}*")
 
 
 @run_async
-def sanitize(update: Update, context: CallbackContext):
+def hug(update: Update, context: CallbackContext):
     message = update.effective_message
     name = (
         message.reply_to_message.from_user.first_name
@@ -44,7 +44,7 @@ def sanitize(update: Update, context: CallbackContext):
         if message.reply_to_message
         else message.reply_animation
     )
-    reply_animation(random.choice(meme_strings.GIFS), caption=f"*Sanitizes {name}*")
+    reply_animation(random.choice(meme_strings.GIFS), caption=f"*hugs {name}*")
    
    
 #plugin by t.me/RCage
@@ -62,16 +62,16 @@ def meme(update: Update, context: CallbackContext):
 
 
 MEME_HANDLER = DisableAbleCommandHandler("meme", meme)
-SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
+HUG_HANDLER = DisableAbleCommandHandler("hug", hug)
 
 dispatcher.add_handler(MEME_HANDLER)
-dispatcher.add_handler(SANITIZE_HANDLER)
+dispatcher.add_handler(HUG_HANDLER)
 
 __command_list__ = [
-    "sanitize",
+    "hug",
     "meme",
 ]
 __handlers__ = [
-    SANITIZE_HANDLER,
+    HUG_HANDLER,
     MEME_HANDLER,
 ]
