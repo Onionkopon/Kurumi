@@ -266,7 +266,6 @@ __help__ = """
  • `/sanitize`*:* always use this before /pat or any contact
  • `/pat`*:* pats a user, or get patted
  • `/meme` *:* get random memes from reddit
- • `/hug` *:* hugs a user, or get hugged
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
