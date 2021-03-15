@@ -16,7 +16,7 @@ GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr
 
 
 @run_async
-def hug(update: Update, context: CallbackContext):
+def hugs(update: Update, context: CallbackContext):
     message = update.effective_message
     name = (
         message.reply_to_message.from_user.first_name
@@ -32,7 +32,7 @@ def hug(update: Update, context: CallbackContext):
 
 
 @run_async
-def hug(update: Update, context: CallbackContext):
+def hugs(update: Update, context: CallbackContext):
     message = update.effective_message
     name = (
         message.reply_to_message.from_user.first_name
@@ -62,16 +62,16 @@ def meme(update: Update, context: CallbackContext):
 
 
 MEME_HANDLER = DisableAbleCommandHandler("meme", meme)
-HUG_HANDLER = DisableAbleCommandHandler("hug", hug)
+HUGS_HANDLER = DisableAbleCommandHandler("hugs", hugs)
 
 dispatcher.add_handler(MEME_HANDLER)
-dispatcher.add_handler(HUG_HANDLER)
+dispatcher.add_handler(HUGS_HANDLER)
 
 __command_list__ = [
-    "hug",
+    "hugs",
     "meme",
 ]
 __handlers__ = [
-    HUG_HANDLER,
+    HUGS_HANDLER,
     MEME_HANDLER,
 ]
