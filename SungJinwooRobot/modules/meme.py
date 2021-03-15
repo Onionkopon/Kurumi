@@ -57,15 +57,19 @@ def meme(update: Update, context: CallbackContext):
 
 MEME_HANDLER = DisableAbleCommandHandler("meme", meme)
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
+HUG_HANDLER = DisableAbleCommadHandler("hug", hug) 
 
 dispatcher.add_handler(MEME_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
+dispatcher.add_handler(HUG_HANDLER)
 
 __command_list__ = [
     "sanitize",
     "meme",
+    "hug",
 ]
 __handlers__ = [
     SANITIZE_HANDLER,
     MEME_HANDLER,
+    HUG_HANDLER,
 ]
