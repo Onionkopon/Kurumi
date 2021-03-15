@@ -71,7 +71,7 @@ I Use My Powers To Help Admins To Manage Their Groups!
 And the following:
 """.format(
     dispatcher.bot.first_name, ""
-    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n") [.](https://telegra.ph/file/b1b545eb4877b012eac82.jpg)
+    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
 
 SungJinWoo_IMG = "https://telegra.ph/file/99bbcc3b8564804dc2ab0.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
