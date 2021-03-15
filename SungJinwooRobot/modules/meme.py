@@ -3,7 +3,7 @@ import random
 import time
 import requests
 
-import SungJinwooRobot.modules.meme_strings as fun_strings
+import SungJinwooRobot.modules.meme_strings as meme_strings
 from SungJinwooRobot import dispatcher
 from SungJinwooRobot.modules.disable import DisableAbleCommandHandler
 from SungJinwooRobot.modules.helper_funcs.chat_status import is_user_admin
@@ -44,7 +44,7 @@ def sanitize(update: Update, context: CallbackContext):
         if message.reply_to_message
         else message.reply_animation
     )
-    reply_animation(random.choice(fun_strings.GIFS), caption=f"*Sanitizes {name}*")
+    reply_animation(random.choice(meme_strings.GIFS), caption=f"*Sanitizes {name}*")
    
 #plugin by t.me/RCage
 @run_async
