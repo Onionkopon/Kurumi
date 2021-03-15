@@ -27,10 +27,9 @@ from SungJinwooRobot.modules.helper_funcs.extraction import extract_user
 from SungJinwooRobot import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
 
 
-
 def no_by_per(totalhp, percentage):
     """
-    rtype: num of percentage from total
+    rtype: num of `percentage` from total
     eg: 1000, 10 -> 10% of 1000 (100)
     """
     return totalhp * percentage / 100
@@ -38,7 +37,7 @@ def no_by_per(totalhp, percentage):
 
 def get_percentage(totalhp, earnedhp):
     """
-    rtype: percentage of totalhp num
+    rtype: percentage of `totalhp` num
     eg: (1000, 100) will return 10%
     """
 
@@ -53,7 +52,7 @@ def hpmanager(user):
 
     if not is_user_gbanned(user.id):
 
-        # Assign new var new_hp since we need total_hp in
+        # Assign new var `new_hp` since we need `total_hp` in
         # end to calculate percentage.
         new_hp = total_hp
 
@@ -104,8 +103,8 @@ def hpmanager(user):
         "totalhp": int(total_hp),
         "percentage": get_percentage(total_hp, new_hp)
     }
-  
-  
+
+
 def make_bar(per):
     done = min(round(per / 10), 10)
     return "■" * done + "□" * (10 - done)
@@ -227,17 +226,17 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text(
         "<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
-    text = (f"「 <b>🔰Info results🔰:</b> 」\n"
-            f"◾ID: <code>{user.id}</code>\n"
-            f"◾First Name: {html.escape(user.first_name)}")
+    text = (f"╒═══「<b> Appraisal results:</b> 」\n"
+            f"ID: <code>{user.id}</code>\n"
+            f"First Name: {html.escape(user.first_name)}")
 
     if user.last_name:
-        text += f"\n◾Last Name: {html.escape(user.last_name)}"
+        text += f"\nLast Name: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n◾Username: @{html.escape(user.username)}"
+        text += f"\nUsername: @{html.escape(user.username)}"
 
-    text += f"\n◾Permalink: {mention_html(user.id, 'link')}"
+    text += f"\nPermalink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nPresence: <code>{}</code>"
@@ -272,22 +271,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis user is on another level. level of 'GOD'."
+        text += "\n\nThe Power level of this person is 'God'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is friend of 'GOD'."
+        text += "\n\nThe Power level of this person is 'S - Rank'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nShh,This user is having access of doing 'Globally ban' across me."
+        text += "\n\nThe Power level of this person is 'A - Rank'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nShh,This user is having access of doing 'Globally ban' across me."
+        text += "\n\nThe Power level of this person is 'B - Rank'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nShh,This user is having access of doing 'Globally ban' across me."
+        text += "\n\nThe Power level of this person is 'C - Rank'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nShh,This user is having access of doing 'Globally ban' across me."
+        text += "\n\nThe Power level of this person is 'D - Rank'."
         disaster_level_present = True
 
     if disaster_level_present:
@@ -384,18 +383,6 @@ def set_about_me(update: Update, context: CallbackContext):
     text = message.text
     info = text.split(None, 1)
     if len(info) == 2:
-      if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
-            sql.set_user_me_info(user_id, info[1])
-            if user_id in [777000, 1087968824]:
-                message.reply_text("Authorized...Information updated!")
-            elif user_id == bot.id:
-                message.reply_text(
-                    "I have updated my info with the one you provided!")
-            else:
-                message.reply_text("Information updated!")
-        else:
-            message.reply_text(
-                "The info needs to be under {} characters! You have {}.".format(
         if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
             sql.set_user_me_info(user_id, info[1])
             if user_id in [777000, 1087968824]:
@@ -448,7 +435,7 @@ def about_bio(update: Update, context: CallbackContext):
         )
     else:
         update.effective_message.reply_text(
-            "You haven't set anything about yourself yet!")
+            "You haven't had a bio set about yourself yet!")
 
 
 @run_async
@@ -463,7 +450,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == message.from_user.id:
             message.reply_text(
-                "Ha, you can't set your own bio lol! You're at the mercy of others here..."
+                "Ha, you can't set your own bio! You're at the mercy of others here..."
             )
             return
 
@@ -473,7 +460,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust Heroes to set my bio.")
+                "Erm... yeah, I only trust Heroes Association to set my bio.")
             return
 
         text = message.text
