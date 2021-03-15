@@ -59,10 +59,9 @@ HELP_STRINGS = """
 Hey there! My name is *{}*.
 I Use My Powers To Help Admins To Manage Their Groups! 
 
-*Main* commands available [:](https://telegra.ph/file/b1b545eb4877b012eac82.jpg)
+*Main* commands available :
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
@@ -72,7 +71,7 @@ I Use My Powers To Help Admins To Manage Their Groups!
 And the following:
 """.format(
     dispatcher.bot.first_name, ""
-    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
+    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n") [.](https://telegra.ph/file/b1b545eb4877b012eac82.jpg)
 
 SungJinWoo_IMG = "https://telegra.ph/file/99bbcc3b8564804dc2ab0.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
