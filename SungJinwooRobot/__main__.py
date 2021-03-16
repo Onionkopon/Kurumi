@@ -222,11 +222,10 @@ def start(update: Update, context: CallbackContext):
                   
                     
     else:
-        update.effective_message.reply_video(
-                KURUMI_IMG, caption=f"I'm awake already!\n<b>Haven't slept since:<b> <code>{}<code>"
+        update.effective_message.reply_text(
+            KURUMI_IMG, "I'm here with my Zaphkiel!\n<b>Haven't slept since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
-
 
 # for test purposes
 def error_callback(update: Update, context: CallbackContext):
