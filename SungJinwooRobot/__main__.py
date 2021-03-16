@@ -56,7 +56,7 @@ I am an Anime themed group management bot. I will use my angel Zafkiel and prote
 """
 
 HELP_STRINGS = """
-[KURUMI](https://telegra.ph/file/b1b545eb4877b012eac82.jpg) is here! 
+[KURUMI](https://telegra.ph/file/b1b545eb4877b012eac82.png) is here! 
 I Use My Powers To Help Admins To Manage Their Groups! 
 *Main* commands available :
  • /help: PM's you this message.
