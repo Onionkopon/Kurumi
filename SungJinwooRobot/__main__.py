@@ -56,7 +56,7 @@ I am an Anime themed group management bot. I will use my angel Zafkiel and prote
 """
 
 HELP_STRINGS = """
-[KURUMI](https://telegra.ph/file/b1b545eb4877b012eac82.png) is here! 
+KURUMI is here! 
 I Use My Powers To Help Admins To Manage Their Groups! 
 *Main* commands available :
  • /help: PM's you this message.
@@ -64,6 +64,7 @@ I Use My Powers To Help Admins To Manage Their Groups!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
+For all command use / or ! 
 """.format(
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
