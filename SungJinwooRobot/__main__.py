@@ -73,7 +73,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
 
-SungJinWoo_IMG = "https://telegra.ph/file/99bbcc3b8564804dc2ab0.jpg"
+TOKISAKI_IMG = "https://telegra.ph/file/99bbcc3b8564804dc2ab0.jpg"
 KURUMI_IMG = "https://telegra.ph/file/e1d87ec2bdac4e3cfe0a4.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -186,7 +186,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                SungJinWoo_IMG,
+                TOKISAKI_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(context.bot.first_name)),
@@ -224,7 +224,8 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_video(
                 KURUMI_IMG, caption=f"I'm awake already!\n<b>Haven't slept since:<b> <code>{}<code>"
-            .format(uptime))
+            .format(uptime),
+            parse_mode=ParseMode.HTML)
 
 
 # for test purposes
