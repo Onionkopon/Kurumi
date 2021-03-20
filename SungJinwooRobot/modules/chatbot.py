@@ -16,7 +16,7 @@ from telegram.ext import (CallbackContext, CommandHandler, Filters,
                           MessageHandler, run_async)
 from telegram.utils.helpers import mention_html
 
-CoffeeHouseAPI = API(AI_API_KEY) 
+CoffeeHouseAPI = API(AI_API_KEY)
 api_client = LydiaAI(CoffeeHouseAPI)
 
 
@@ -29,10 +29,6 @@ def add_chat(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user
     is_chat = sql.is_chat(chat.id)
-    if chat.type == "private":
-        msg.reply_text("You can't enable AI in PM.")
-        return
-
     if not is_chat:
         ses = api_client.create_session()
         ses_id = str(ses.id)
@@ -74,7 +70,19 @@ def remove_chat(update: Update, context: CallbackContext):
 
 def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "sung jin-woo":
+    if message.text.lower() == "makise":
+        return True
+    if message.text.lower() == "kurisu":
+        return True
+    if message.text.lower() == "kurisu makise":
+        return True
+    if message.text.lower() == "hi":
+        return True
+    if message.text.lower() == "hello":
+        return True
+    if message.text.lower() == "ohayo":
+        return True
+    if message.text.lower() == "bye":
         return True
     if reply_msg:
         if reply_msg.from_user.id == context.bot.get_me().id:
@@ -112,9 +120,8 @@ def chatbot(update: Update, context: CallbackContext):
             sleep(0.3)
             msg.reply_text(rep, timeout=60)
         except CFError as e:
-            pass
-            #bot.send_message(OWNER_ID,
-            #                 f"Chatbot error: {e} occurred in {chat_id}!")
+            bot.send_message(OWNER_ID,
+                             f"Chatbot error: {e} occurred in {chat_id}!")
 
 
 @run_async
