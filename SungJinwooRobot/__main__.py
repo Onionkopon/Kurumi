@@ -56,7 +56,7 @@ I am an Anime themed group management bot. I will use my angel Zafkiel and prote
 """
 
 HELP_STRINGS = """
-KURUMI is here! 
+Makise is here! 
 I Use My Powers To Help Admins To Manage Their Groups! 
 *Main* commands available :
  • /help: PM's you this message.
@@ -69,7 +69,7 @@ For all command use / [or](https://telegra.ph/file/b1b545eb4877b012eac82.png) !
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
 
-TOKISAKI_IMG = "https://telegra.ph/file/99bbcc3b8564804dc2ab0.jpg"
+TOKISAKI_IMG = "https://telegra.ph/file/59f957d96a78c7776dd8e.jpg"
 KURUMI_IMG = "https://telegra.ph/file/e1d87ec2bdac4e3cfe0a4.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -191,7 +191,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Kurumi Chan to your group",
+                            text="☑️ Add Makise to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -218,8 +218,10 @@ def start(update: Update, context: CallbackContext):
                   
                     
     else:
-        update.effective_message.reply_video(
-                KURUMI_IMG, caption=f"Zaphkiel!!!!\nI'm here with my Zaphkiel")
+        update.effective_message.reply_text(
+            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+            .format(uptime),
+            parse_mode=ParseMode.HTML)
 
 # for test purposes
 def error_callback(update: Update, context: CallbackContext):
